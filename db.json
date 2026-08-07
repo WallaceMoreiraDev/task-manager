@@ -34,14 +34,6 @@
       "status": "Pendente"
     },
     {
-      "id": "tSk_q1W2e3R",
-      "title": "Corrigir bug no botão de login",
-      "desc": "O botão de Entrar não está ficando desabilitado enquanto aguarda a resposta do servidor, permitindo múltiplos cliques.",
-      "date": "2026-08-06",
-      "priority": "Alta",
-      "status": "Em andamento"
-    },
-    {
       "id": "tSk_m9N8b7V",
       "title": "Reunião de alinhamento com design",
       "desc": "Apresentar a primeira versão do dashboard de tarefas e colher feedbacks da equipe sobre a paleta de cores.",
@@ -56,14 +48,6 @@
       "date": "2026-08-01",
       "priority": "Alta",
       "status": "Concluida"
-    },
-    {
-      "id": "tSk_k1J2h3G",
-      "title": "Atualizar dependências do projeto",
-      "desc": "Rodar npm update e verificar se não quebrou nada com a nova versão do Zod e do React Router.",
-      "date": "2026-08-12",
-      "priority": "Baixa",
-      "status": "Pendente"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
