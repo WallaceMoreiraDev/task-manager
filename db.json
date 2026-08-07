@@ -1,0 +1,70 @@
+{
+  "accounts": [
+    {
+      "id": "1",
+      "email": "wallacemoreira@gmail.com",
+      "password": "wallace36912"
+    },
+    {
+      "email": "wallace.msilva0805@gmail.com",
+      "password": "wallace36912",
+      "id": "PpXWoxRu4bs"
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "wallace36912",
+      "id": "pkk7O-rj7TY"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "RO5ZOLBVhC0",
+      "title": "Testando titulooooAAA",
+      "desc": "Testando descrição",
+      "date": "2026-08-14",
+      "priority": "Média",
+      "status": "Concluida"
+    },
+    {
+      "id": "tSk_a1B2c3D",
+      "title": "Finalizar documentação da API",
+      "desc": "Escrever o arquivo README.md detalhando todas as rotas, parâmetros e exemplos de requisições.",
+      "date": "2026-08-05",
+      "priority": "Alta",
+      "status": "Pendente"
+    },
+    {
+      "id": "tSk_q1W2e3R",
+      "title": "Corrigir bug no botão de login",
+      "desc": "O botão de Entrar não está ficando desabilitado enquanto aguarda a resposta do servidor, permitindo múltiplos cliques.",
+      "date": "2026-08-06",
+      "priority": "Alta",
+      "status": "Em andamento"
+    },
+    {
+      "id": "tSk_m9N8b7V",
+      "title": "Reunião de alinhamento com design",
+      "desc": "Apresentar a primeira versão do dashboard de tarefas e colher feedbacks da equipe sobre a paleta de cores.",
+      "date": "2026-08-07",
+      "priority": "Média",
+      "status": "Pendente"
+    },
+    {
+      "id": "tSk_p0L9o8K",
+      "title": "Deploy da aplicação no Vercel",
+      "desc": "Configurar o projeto e a branch main para build automático no Vercel e garantir que as variáveis de ambiente estão certas.",
+      "date": "2026-08-01",
+      "priority": "Alta",
+      "status": "Concluida"
+    },
+    {
+      "id": "tSk_k1J2h3G",
+      "title": "Atualizar dependências do projeto",
+      "desc": "Rodar npm update e verificar se não quebrou nada com a nova versão do Zod e do React Router.",
+      "date": "2026-08-12",
+      "priority": "Baixa",
+      "status": "Pendente"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
