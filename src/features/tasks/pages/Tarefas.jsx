@@ -41,7 +41,7 @@ export function Tarefas() {
             {feedback.info !== '' ? (<Feedback feedback={feedback} />) : null}
 
             <div className="div-lista-tarefas">
-                {feedback === 'error' ? (<p>{feedback.message}</p>) : isLoading ? (<p>Carregando...</p>) : filteredTasks.map(task => (
+                {feedback === 'error' ? (<p>{feedback.message}</p>) : isLoading ? (<p>Carregando...</p>) : filteredTasks.length > 0 ? filteredTasks.map(task => (
                     <div key={task.id} className="div-tarefa">
                         <div className="tarefa-header">
                             <h3 className="tarefa-title">{task.title}</h3>
@@ -101,7 +101,7 @@ export function Tarefas() {
                             </div>
                         </div>
                     </div>
-                ))}
+                )) : 'Nenhuma tarefa encontrada com os filtros atuais!'}
             </div>
         </div>
     )

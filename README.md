@@ -1,3 +1,5 @@
+# Detalhamento do projeto de gerenciamento de tarefas
+
 ## 📋 Visão Geral
 
 Esse task manager é um projeto criado para aplicar meus conhecimentos prévios em React ao mesmo tempo em que aprendo novas coisas "Just-in-time" (apenas no tempo certo). É um sistema que possui login limitado ao front-end (sem JWT ou backend real criado do zero), página de criação de tarefas e página de visualização/edição de tarefas. 
@@ -23,4 +25,4 @@ Para fins de portfólio e demonstração sem um backend real de JWT, implementei
 
 ### 4. Componentização Limpa (Custom Hooks)
 - A regra de negócio para extração de Hooks foi rigorosa: Qualquer tela que apresentasse repetição de lógica de estado (`useState`) ou funções específicas de domínio, teve sua complexidade abstraída para **Hooks Customizados**, deixando os componentes JSX responsáveis apenas pela renderização visual (View).
-- O sistema de Feedbacks foi centralizado em um componente padrão `<Feedback />`, controlado por um estado global do hook (Evitando a complexidade desnecessária de filas/arrays de múltiplos alertas simultâneos).
+- O sistema de Feedbacks foi centralizado em um componente padrão `<Feedback />`, controlado por um estado global do hook (Evitando a complexidade desnecessária de filas/arrays de múltiplos alertas simultâneos. Em futuros projetos haverá uso de hot toast para feedbacks).

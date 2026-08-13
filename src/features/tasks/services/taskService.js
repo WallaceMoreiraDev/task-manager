@@ -4,13 +4,12 @@
 
 //TODO alterar toda função que possui o método antigo de erro (agora estamos usando exception propagation).
 
-export async function getAllTasks() {
+export async function getAllTasks(currentUserId) {
 
 
     try {
 
-
-        const res = await fetch('http://localhost:3001/tasks');
+        const res = await fetch(`http://localhost:3001/tasks?idUser=${currentUserId}`);
 
         if (!res.ok) throw new Error();
 

@@ -5,17 +5,29 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   return (
-    <div className="container">
-      <div className="menu-cima">Div de cima</div>
+    <div className="app-container">
+      <header className="menu-cima">
+        <div className="brand-logo">✨ TaskMaster</div>
+        <div className="user-profile">
+          <div className="avatar">W</div>
+          <span>Nome usuário</span>
+        </div>
+      </header>
       <div className="container-main">
         <aside className="menu-lateral">
-          <p>Navegação</p>
-          <ul>
-            <NavLink to='/dashboard' end className="link-menu">Tarefas</NavLink>
-            <NavLink to='criar-tarefa' className='link-menu'>Criar nova tarefa</NavLink>
-          </ul>
+          <p className="menu-label">MENU PRINCIPAL</p>
+          <nav>
+            <NavLink to='/dashboard' end className={({ isActive }) => isActive ? "link-menu active" : "link-menu"}>
+              📋 Minhas Tarefas
+            </NavLink>
+            <NavLink to='criar-tarefa' className={({ isActive }) => isActive ? "link-menu active" : "link-menu"}>
+              ➕ Criar Tarefa
+            </NavLink>
+          </nav>
         </aside>
-        <Outlet context={{ tasks, setTasks }} />
+        <main className="content-area">
+          <Outlet context={{ tasks, setTasks }} />
+        </main>
       </div>
     </div>
   );

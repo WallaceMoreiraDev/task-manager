@@ -17,7 +17,9 @@ export default function useTask(initialTasks = [], initialIsLoading = false) {
 
             setIsLoading(true);
 
-            const res = await taskService.getAllTasks();
+            const currentUserId = JSON.parse(localStorage.getItem("@ProjetoTeste:currentUser")).id;
+
+            const res = await taskService.getAllTasks(currentUserId);
 
             if (!res.success) {
                 setFeedback({ info: 'error', message: res.message });
@@ -43,13 +45,18 @@ export default function useTask(initialTasks = [], initialIsLoading = false) {
 
         setIsLoading(true);
 
+        const currentUserId = JSON.parse(localStorage.getItem("@ProjetoTeste:currentUser")).id;
+
         const newTask = {
+            idUser: currentUserId,
             title: dataForm.title,
             desc: dataForm.desc,
             date: dataForm.date,
             priority: dataForm.priority,
             status: dataForm.status,
         }
+
+        console.log(newTask);
 
         const schema = taskSchema.safeParse(newTask);
 

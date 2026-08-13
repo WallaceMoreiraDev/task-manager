@@ -11,8 +11,6 @@ export default function EditTaskForm({ initialTitle = '', initialDesc = '', init
 
         setIsLoading(true);
 
-        console.log("Objeto chegando EditTaskForm: ", { id, title, desc, date, priority, status })
-
         await editTask({ id, title, desc, date, priority, status });
 
         setIsLoading(false);

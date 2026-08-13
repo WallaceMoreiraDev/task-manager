@@ -18,6 +18,7 @@
   ],
   "tasks": [
     {
+      "idUser": "1",
       "id": "RO5ZOLBVhC0",
       "title": "Testando titulooooAAA",
       "desc": "Testando descrição",
@@ -26,6 +27,7 @@
       "status": "Concluida"
     },
     {
+      "idUser": "1",
       "id": "tSk_a1B2c3D",
       "title": "Finalizar documentação da API",
       "desc": "Escrever o arquivo README.md detalhando todas as rotas, parâmetros e exemplos de requisições.",
@@ -34,6 +36,7 @@
       "status": "Pendente"
     },
     {
+      "idUser": "1",
       "id": "tSk_m9N8b7V",
       "title": "Reunião de alinhamento com design",
       "desc": "Apresentar a primeira versão do dashboard de tarefas e colher feedbacks da equipe sobre a paleta de cores.",
@@ -42,12 +45,66 @@
       "status": "Pendente"
     },
     {
+      "idUser": "PpXWoxRu4bs",
       "id": "tSk_p0L9o8K",
       "title": "Deploy da aplicação no Vercel",
       "desc": "Configurar o projeto e a branch main para build automático no Vercel e garantir que as variáveis de ambiente estão certas.",
       "date": "2026-08-01",
       "priority": "Alta",
-      "status": "Concluida"
+      "status": "Em andamento"
+    },
+    {
+      "id": "OmJAgSj9lUM",
+      "title": "Testando titulo",
+      "desc": "Testando descrição",
+      "date": "2026-08-13",
+      "priority": "Média",
+      "status": "Pendente"
+    },
+    {
+      "idUser": "PpXWoxRu4bs",
+      "title": "TITULO AAA",
+      "desc": "Testando descrição",
+      "date": "2026-07-27",
+      "priority": "Alta",
+      "status": "Concluida",
+      "id": "ZcMm_wH6Kw4"
+    },
+    {
+      "idUser": "pkk7O-rj7TY",
+      "title": "TITULO AAA",
+      "desc": "Testando descrição",
+      "date": "2026-07-27",
+      "priority": "Alta",
+      "status": "Concluida",
+      "id": "BxNifD6gKuM"
+    },
+    {
+      "idUser": "1",
+      "title": "Testando titulo",
+      "desc": "Testando descrição",
+      "date": "2026-08-13",
+      "priority": "Média",
+      "status": "Concluida",
+      "id": "i0s1Sz3cZkM"
+    },
+    {
+      "idUser": "PpXWoxRu4bs",
+      "title": "Testando titulo",
+      "desc": "Testando descrição",
+      "date": "2026-08-13",
+      "priority": "Média",
+      "status": "Concluida",
+      "id": "ZtvreSZubXI"
+    },
+    {
+      "idUser": "PpXWoxRu4bs",
+      "title": "AAAAAAAAAAAAAA",
+      "desc": "descricao",
+      "date": "2026-08-12",
+      "priority": "Alta",
+      "status": "Concluida",
+      "id": "yy0SluyvMXk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
