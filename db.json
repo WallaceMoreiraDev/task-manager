@@ -94,7 +94,7 @@
       "desc": "Testando descrição",
       "date": "2026-08-13",
       "priority": "Média",
-      "status": "Concluida",
+      "status": "Pendente",
       "id": "ZtvreSZubXI"
     },
     {
@@ -105,6 +105,15 @@
       "priority": "Alta",
       "status": "Pendente",
       "id": "yy0SluyvMXk"
+    },
+    {
+      "idUser": "PpXWoxRu4bs",
+      "title": "BBBBB",
+      "desc": "Testando descrição",
+      "date": "2026-08-19",
+      "priority": "Média",
+      "status": "Pendente",
+      "id": "P_DNHoMGepc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

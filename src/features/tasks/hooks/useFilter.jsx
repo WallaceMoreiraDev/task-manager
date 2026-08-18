@@ -6,7 +6,16 @@ export default function useFilter() {
     const [filterStatus, setFilterStatus] = useState('');
 
 
-    //Ao colocar essa função de filtro e ordenação aqui no hook eu garanto que não o componente Tarefas.jsx não fique poluído com lógica complexa, além de manter o projeto organizado.
+    //Ao colocar essa função de filtro e ordenação aqui no hook eu garanto que não o componente Tarefas.jsx não fique poluído com lógica complexa (seguindo SPR), além de manter o projeto organizado.
+
+    const weightStatus = {
+        "Pendente": 3,
+        "Em andamento": 2,
+        "Concluida": 1,
+    };
+
+
+
     function filterSort(tasks) {
 
         const filteredTasks = tasks.filter(task => {
@@ -20,7 +29,16 @@ export default function useFilter() {
             const resStatus = task.status.toLowerCase().includes(filterStatus.toLowerCase()) || filterStatus.trim() === '';
 
             return (resTitle && resDate && resStatus);
-        }).sort((a, b) => a.title.localeCompare(b.title));
+        }).sort((a, b) => {
+
+            console.log("Objeto 'a' vindo ordenação status: ", a)
+            console.log("Objeto 'b' vindo ordenação status: ", b)
+
+            const weightStatusA = weightStatus[a.status];
+            const weightStatusB = weightStatus[b.status];
+
+            return weightStatusA - weightStatusB;
+        });
 
         return filteredTasks;
 
