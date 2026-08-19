@@ -8,24 +8,27 @@ Esse task manager é um projeto criado para aplicar meus conhecimentos prévios 
 
 O projeto é composto por coisas que eu gostaria de aprender/praticar que são utilizadas no desenvolvimento real de sistemas. Não considero que aprendi tudo o que gostaria, pelo contrário: ainda tenho MUITO a aprender e principalmente praticar para que essas coisas venham ser automáticas com o tempo. Aqui está uma listagem das funcionalidade que desenvolvi:
 
-### 1. Login sem backend real
+### 1. Componente de layout geral padrão para áreas que foram acessadas
+Exitse um componente Applayout.jsx na qual abrange toda área interna do sistema (depois que ele fez login), que contém a nomenclatura do sistema bem simples feita por IA (todo o layout visual, na real); também possui área de navegação de páginas, botão para logout. Existiram desafios? Basicamente não nessa parte. Mas vale ressaltar algo: *a função de logout segue o mesmo princípio do sistema todo, que é sem backend, apenas com propósito de praticar React, portanto nem foi preciso  de service nessa parte de logout.*
+
+### 2. Página de login sem backend real
 Desenvolvi uma tela de login para que eu pudesse entender o processo de login na visão do FRONTEND (react), com isso aprendi/pratiquei coisas como:
 
 - **Feedback e Navigate**: Pratiquei o uso de feedback e uso de `Navigate` após autenticação.
 - **Verificações iniciais com zod e autenticação superficial**: Pratiquei o uso do schema do zod, e fiz uma autenticação superficial em React que me permitiu aprender mais sobre o processo de autenticação, a ordem de verificar se conta existe, verificar se as senhas batem em relação àquele email.
 - **Simulação de token no localStorage**: Me permitiu praticar o parse do JSON e também a transformação de um objeto pra JSON, além de me fazer compreender como funciona (mais ou menos, já que o jeito correto é através de cookies) a questão do sistema "lembrar" do usuário e permitir acesso a rotas protegidas sem precisar de login repetidas vezes.
 
-### 2. Criar conta
+### 3. Página para criar conta
 Essa página de criação de conta trouxeram os mesmos aprendizados e ajudaram da mesma forma que a página de Login colocada acima! Por esse motivo, não irei colocar aqui uma lista, já que são coisas mais básicas.
 
-### 3. Criar Tarefa
+### 4. Página para criar Tarefa
 A página de criação de tarefa me ajudou a colocar em prática muitas coisas de React também, como por exemplo as coisas que foram principais:
 
 - **Schema com Zod**: Novamente nessa página pude colocar em prática meus aprendizados com zod e validação no `Hook`.
 - **SPR (Single Principle Responsibility)**: Pude também praticar em que momento colocar a validação do zod (no `Hook`, logo no início), e em que momento tratar erros (no `Hook` também, seguindo o Exception Propagation).
 - **Isolamento de dados (Multi-tenancy)**: Fiz com que no processo de criação de task, o `Hook` **pegasse através do `localStorage` o id do usuário que criou a task** e colocasse no objeto que seria enviado pela função `createTask` do service e armazenado pelo db.json.
 
-### 4. Visualizar tarefas
+### 5. Página para visualizar tarefas
 **Nessa parte do sistema ficou maior parte da dificuldade**, por um desafio arquitetural diferente que tive de enfrentar e me fez repensar a forma de uso dos **Custom Hooks**. Gostaria de listar as sub-funcionalidades dentro do visualizar tarefas:
 
 - **Excluir tarefa**
