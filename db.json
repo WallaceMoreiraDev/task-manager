@@ -114,6 +114,15 @@
       "priority": "Média",
       "status": "Pendente",
       "id": "P_DNHoMGepc"
+    },
+    {
+      "idUser": "PpXWoxRu4bs",
+      "title": "Testando titulo",
+      "desc": "Testando descrição",
+      "date": "2026-08-20",
+      "priority": "Média",
+      "status": "Concluida",
+      "id": "vhppJ9oPWPM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

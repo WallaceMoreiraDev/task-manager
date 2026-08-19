@@ -29,11 +29,12 @@ export default function useFilter() {
             const resStatus = task.status.toLowerCase().includes(filterStatus.toLowerCase()) || filterStatus.trim() === '';
 
             return (resTitle && resDate && resStatus);
-        }).sort((a, b) => {
+        }).sort((a, b) => { //Aqui foi tomada uma decisão de UX, aonde eu decidi que seria melhor uma ordenação por status (em breve talvez possa ter uma separação explícita pra cada status visualmente, mas por agora é isso).
 
             console.log("Objeto 'a' vindo ordenação status: ", a)
             console.log("Objeto 'b' vindo ordenação status: ", b)
 
+            //Usei colchetes para sinalizar que quero acessar com base na variável a.status e não literalmente uma chave 'a' e depois uma chave 'status' (um outro aprendizado básico).
             const weightStatusA = weightStatus[a.status];
             const weightStatusB = weightStatus[b.status];
 

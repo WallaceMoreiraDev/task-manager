@@ -98,5 +98,14 @@ export default function useLogin(initialEmail = '', initialPassword = '', initia
 
     }
 
-    return { email, password, feedback, setPassword, setEmail, handleCreate, handleLogin };
+    async function handleLogout(e) {
+        e.preventDefault();
+
+        //Ação de exclusão do registro que há no localSotrage
+        localStorage.removeItem("@ProjetoTeste:currentUser");
+        navigate("/");
+
+    }
+
+    return { email, password, feedback, setPassword, setEmail, handleCreate, handleLogin, handleLogout };
 }
