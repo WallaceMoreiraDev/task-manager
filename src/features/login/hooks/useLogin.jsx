@@ -98,8 +98,7 @@ export default function useLogin(initialEmail = '', initialPassword = '', initia
 
     }
 
-    async function handleLogout(e) {
-        e.preventDefault();
+    async function handleLogout() {
 
         //Ação de exclusão do registro que há no localSotrage
         localStorage.removeItem("@ProjetoTeste:currentUser");

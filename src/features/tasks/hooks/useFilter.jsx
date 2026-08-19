@@ -1,12 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function useFilter() {
     const [filterTitle, setFilterTitle] = useState('');
     const [filterDate, setFilterDate] = useState('');
     const [filterStatus, setFilterStatus] = useState('');
+    const [filterTitleDebounce, setFilterTitleDebounce] = useState('');
 
 
-    //Ao colocar essa função de filtro e ordenação aqui no hook eu garanto que não o componente Tarefas.jsx não fique poluído com lógica complexa (seguindo SPR), além de manter o projeto organizado.
 
     const weightStatus = {
         "Pendente": 3,
@@ -14,15 +14,30 @@ export default function useFilter() {
         "Concluida": 1,
     };
 
+    //Esse é o cerne do debounce (atraso proposital) do campo do titulo na visualização de tarefas, identifico a alteração no estado de titulo do campo -> ativo o timer: se completa o tempo sem interrupção -> mudo estado do debounce; se não -> cancelo o timer anterior.
 
+    useEffect(() => {
+
+        const timer = setTimeout(() => {
+
+            setFilterTitleDebounce(filterTitle);
+
+        }, 300);
+
+        return () => { clearTimeout(timer) };
+
+    }, [filterTitle]);
+
+
+    //Ao colocar essa função de filtro e ordenação aqui no hook eu garanto que não o componente Tarefas.jsx não fique poluído com lógica complexa (seguindo SPR), além de manter o projeto organizado.
 
     function filterSort(tasks) {
 
         const filteredTasks = tasks.filter(task => {
 
-            console.log("Veja aqui o objeto com valor do objeto de fato e o valor vindo no filtro", { valorLista: task.title, valorFiltro: filterTitle });
+            console.log("Veja aqui o objeto com valor do objeto de fato e o valor vindo no filtro", { valorLista: task.title, valorFiltro: filterTitleDebounce });
 
-            const resTitle = task.title.toLowerCase().includes(filterTitle.toLowerCase()) || filterTitle.trim() === '';
+            const resTitle = task.title.toLowerCase().includes(filterTitleDebounce.toLowerCase()) || filterTitleDebounce.trim() === '';
 
             const resDate = task.date.toLowerCase().includes(filterDate.toLowerCase()) || filterDate.trim() === '';
 

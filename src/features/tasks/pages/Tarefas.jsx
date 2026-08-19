@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom"
 import useTask from "../hooks/useTask";
 import Feedback from "../../../components/Feedback";
 import Modal from "../../../components/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EditTaskForm from "../components/EditTaskForm";
 import useFilter from "../hooks/useFilter";
 
