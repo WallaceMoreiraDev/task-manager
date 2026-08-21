@@ -6,14 +6,6 @@ export default function useFilter() {
     const [filterStatus, setFilterStatus] = useState('');
     const [filterTitleDebounce, setFilterTitleDebounce] = useState('');
 
-
-
-    const weightStatus = {
-        "Pendente": 3,
-        "Em andamento": 2,
-        "Concluida": 1,
-    };
-
     //Esse é o cerne do debounce (atraso proposital) do campo do titulo na visualização de tarefas, identifico a alteração no estado de titulo do campo -> ativo o timer: se completa o tempo sem interrupção -> mudo estado do debounce; se não -> cancelo o timer anterior.
 
     useEffect(() => {
@@ -32,6 +24,12 @@ export default function useFilter() {
     //Ao colocar essa função de filtro e ordenação aqui no hook eu garanto que não o componente Tarefas.jsx não fique poluído com lógica complexa (seguindo SPR), além de manter o projeto organizado.
 
     function filterSort(tasks) {
+
+        const weightStatus = {
+            "Pendente": 3,
+            "Em andamento": 2,
+            "Concluida": 1,
+        };
 
         const filteredTasks = tasks.filter(task => {
 

@@ -51,7 +51,7 @@
       "desc": "Configurar o projeto e a branch main para build automático no Vercel e garantir que as variáveis de ambiente estão certas.",
       "date": "2026-08-01",
       "priority": "Alta",
-      "status": "Em andamento"
+      "status": "Concluida"
     },
     {
       "id": "OmJAgSj9lUM",
@@ -94,7 +94,7 @@
       "desc": "Testando descrição",
       "date": "2026-08-13",
       "priority": "Média",
-      "status": "Pendente",
+      "status": "Concluida",
       "id": "ZtvreSZubXI"
     },
     {
@@ -103,7 +103,7 @@
       "desc": "descricao",
       "date": "2026-08-12",
       "priority": "Alta",
-      "status": "Pendente",
+      "status": "Concluida",
       "id": "yy0SluyvMXk"
     },
     {
@@ -112,7 +112,7 @@
       "desc": "Testando descrição",
       "date": "2026-08-19",
       "priority": "Média",
-      "status": "Pendente",
+      "status": "Concluida",
       "id": "P_DNHoMGepc"
     },
     {
@@ -123,6 +123,22 @@
       "priority": "Média",
       "status": "Concluida",
       "id": "vhppJ9oPWPM"
+    },
+    {
+      "id": "8ZLZ-DTpcXo",
+      "title": "BBBBBBBBBBBBB",
+      "desc": "BBBBBBBBBBB",
+      "date": "2026-08-19",
+      "priority": "Média",
+      "status": "Em andamento"
+    },
+    {
+      "id": "eP5XQWpdR-k",
+      "title": "CCCCCCC",
+      "desc": "CCCCCCCC",
+      "date": "2026-08-23",
+      "priority": "Alta",
+      "status": "Concluida"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -12,6 +12,25 @@ export function Tarefas() {
 
     const [editingTaskId, setEditingTaskId] = useState(null);
 
+    //Utilizando o conceito de estado derivado, aonde não crio um state desnecessário para essas variáveis, já que elas apenas dependem de um estado já existente.
+    const pendingTasksUn = tasks.filter(task => task.status === 'Pendente').length;
+    const inProgressTasksUn = tasks.filter(task => task.status === 'Em andamento').length;
+    const doneTasksUn = tasks.filter(task => task.status === 'Concluida').length;
+
+    const progressTax = Math.round((doneTasksUn / tasks.length) * 100);
+
+    const lateTasks = tasks.filter(task => {
+
+        //Aprendendo e praticando o uso de datas e as 'boas' formas do JS de se lidar com elas.
+        const safeDateTask = new Date(task.date + "T12:00:00");
+
+        const today = new Date();
+
+        return safeDateTask < today;
+
+    }).length;
+
+
     const filteredTasks = filterSort(tasks);
 
     // Helper feita pela IA na estilização do badge da tarefa
@@ -27,6 +46,62 @@ export function Tarefas() {
             <h1>Lista das suas Tarefas</h1>
             <p>Gerencie, edite e acompanhe o andamento de cada atividade abaixo.</p>
 
+            {/* Início dos Widgets de Resumo Visual */}
+            <div className="dashboard-summary">
+                {/* 1. Resumo Geral de Status */}
+                <div className="summary-card">
+                    <div className="summary-icon pendente">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div className="summary-info">
+                        <span className="summary-value">{pendingTasksUn}</span>
+                        <span className="summary-label">Pendentes</span>
+                    </div>
+                </div>
+
+                <div className="summary-card">
+                    <div className="summary-icon andamento">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div className="summary-info">
+                        <span className="summary-value">{inProgressTasksUn}</span>
+                        <span className="summary-label">Em andamento</span>
+                    </div>
+                </div>
+
+                <div className="summary-card">
+                    <div className="summary-icon concluida">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <div className="summary-info">
+                        <span className="summary-value">{doneTasksUn}</span>
+                        <span className="summary-label">Concluídas</span>
+                    </div>
+                </div>
+
+                {/* 2. Taxa de Progresso Geral */}
+                <div className="summary-card progress-card">
+                    <div className="progress-header">
+                        <span className="summary-label">Progresso Geral</span>
+                        <span className="progress-percentage">{progressTax}%</span>
+                    </div>
+                    <div className="progress-bar-bg">
+                        <div className="progress-bar-fill" style={{ width: progressTax + "%" }}></div>
+                    </div>
+                </div>
+
+                {/* 3. Alerta de Tarefas Atrasadas */}
+                <div className="summary-card alert-card">
+                    <div className="summary-icon atrasada">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                    <div className="summary-info">
+                        <span className="summary-value alert-text">{lateTasks} Atrasadas</span>
+                        <span className="summary-label">Requerem atenção</span>
+                    </div>
+                </div>
+            </div>
+            {/* Fim dos Widgets */}
             <div className="container-filtros">
                 <input className="input-filtro" type="text" placeholder="Buscar por título..." onChange={(e) => { setFilterTitle(e.target.value) }} />
                 <input className="input-filtro" type="date" onChange={(e) => { setFilterDate(e.target.value) }} />
@@ -73,7 +148,7 @@ export function Tarefas() {
                                     <line x1="8" y1="2" x2="8" y2="6"></line>
                                     <line x1="3" y1="10" x2="21" y2="10"></line>
                                 </svg>
-                                {task.date ? new Date(task.date).toLocaleDateString('pt-BR') : 'Sem data'}
+                                {task.date ? new Date(task.date + "T12:00:00").toLocaleDateString('pt-BR') : 'Sem data'}
                             </div>
 
                             <div className="tarefa-actions">
