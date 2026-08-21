@@ -26,7 +26,7 @@ export function Tarefas() {
 
         const today = new Date();
 
-        return safeDateTask < today;
+        return safeDateTask < today && task.status !== 'Concluida';
 
     }).length;
 
